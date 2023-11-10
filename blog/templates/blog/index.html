@@ -1,0 +1,42 @@
+{% extends 'layout.html' %} 
+{% load static %}
+
+{% block title %}A.M. Jamal's Blog {% endblock title %}
+
+
+{% block css_files %}
+  <link rel="stylesheet" href="{% static 'blog/index.css' %}">
+{% endblock css_files %}
+  
+
+{%block content %}
+
+
+<section id="welcome">
+  <header>
+    <img src="{% static 'blog/images/jamal.jpg' %}" alt="D.Dummyson - The Author of This Blog" />
+    <h2>SHENGOR'S BLOG</h2>
+  </header>
+  <p>Hello, I A.M. Jamal Shengor, and I have a passion for blogging about Geology and the world! With my deep interest in science and exploration, sharing the developments of this modern era has become a true passion of mine. I look forward to bringing you intriguing topics ranging from the depths of the Earth to the surface, and discussing the evolution of science!"</p>
+</section>
+
+<section id="latest-posts">
+  <h2>My Latest Thoughts</h2>
+  <ul>
+    
+    {% for post in posts  %}      
+    {% include 'blog/includes/post.html' %}
+    {% endfor %}
+  </ul>
+</section>
+
+<section id="about">
+  <h2>Snapshots</h2>
+  <p>
+    Geology and I have a deep connection, like a hidden love story between rock layers. I believe every rock I see has the potential for a joke. For instance, one day a sandstone said to me, 'Our bond is really tight, not as thin as sand.' Can I call that stone-hearted? Even one day a volcano took inspiration from me and said, 'I'm ready to burn with you forever!' Volcanoes truly understand real love!
+  </p>
+  <p>
+    If I had to choose between being an invisible geologist and living in a world filled with my earth-shattering jokes, I'd definitely go for the latter! My jokes are as deep as tectonic layers, but at least they don't come with seismic effects!
+  </p>
+</section>
+{% endblock content %}
